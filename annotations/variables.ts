@@ -29,3 +29,29 @@ const logNumber: (i: number) => void = (i: number) => {
 const logNumber1 = (i: number) => {
   console.log(i);
 };
+
+// for all above we dont have to specify the annotations type . It is taken care by type inference
+
+// When to use annotations
+//1> Fuction that returns the any type
+const json = '{"x":10,"y":20}';
+const cor: { x: number; y: number } = JSON.parse(json);
+console.log(cor);
+
+// 2 whene we declare a variable one line and initalize it later
+let words = ['red', 'green', 'blue'];
+let foundWord: boolean;
+for (let index = 0; index < words.length; index++) {
+  if (words[index] === 'green') {
+    foundWord = true;
+  }
+}
+
+//3 variable whose type can not be intefferd
+let numbers = [10, 2, 2];
+let numbersAboveZero: boolean | number = false;
+for (let index = 0; index < numbers.length; index++) {
+  if (numbers[index] > 0) {
+    numbersAboveZero = numbers[index];
+  }
+}
