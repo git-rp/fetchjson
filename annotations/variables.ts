@@ -55,3 +55,5 @@ for (let index = 0; index < numbers.length; index++) {
     numbersAboveZero = numbers[index];
   }
 }
+
+// Function
